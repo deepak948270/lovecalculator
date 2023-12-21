@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Result declared!!</title>
+</head>
+<style>
+    body{
+        background-color:lightslategray;
+    }
+    #ds{
+        color:red;
+    }
+
+    #n-link{
+        text-align: center;
+    }
+
+</style>
+<body>
+<div style="background-color: yellow">
+    <h1 style="color: blue; text-align: center;"> Love
+        Calculator is calculated the relation between <span id="ds" th:text="${session.user.userName }"></span>  and
+        <span id="ds" th:text="${session.user.crushName }"></span>  is :</h1>
+    <br>
+    <h1 style="color: red; text-align: center;"><span th:text="${session.user.result}"></span></span></h1>
+</div>
+<br>
+<br>
+<div id="n-link">
+<h1>
+    <a href="lovecalci" style="color: rgb(89, 225, 220)">again calculate!</a>
+</h1>
+<br>
+<h1>
+    <a href="sendmail" style="color: rgb(227, 59, 126);">send result to email</a>
+</h1>
+</div>
+
+</body>
+</html>

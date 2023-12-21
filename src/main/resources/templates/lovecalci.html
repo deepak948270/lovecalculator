@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>love calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    body {
+      background-color: rgb(137, 163, 164);
+    }
+    span {
+      color: red;
+      position: fixed;
+      margin-left: 20px;
+    }
+
+    form {
+      text-align: center;
+    }
+
+    .in {
+      width: 300px;
+    }
+
+    #love {
+      color: red;
+    }
+  </style>
+
+  <!-- adding css file for navbar -->
+  <link rel="stylesheet" th:href="@{/css/navstyle.css}" />
+
+  <body>
+    <!-- replaces host tag with the fragment tag -->
+    <div th:replace="~{myfragments :: navbarfragment}">
+      <h1>host tag</h1>
+    </div>
+
+    <h1 style="color: purple; text-align: center">
+      Love<span id="love">&#10084;</span> Calculator
+    </h1>
+    <hr />
+
+    <form th:object="${loveDto}" th:action="@{/processlovecalci}" method="get">
+      <label for="id">Enter your name:</label>
+      <input type="text" th:field="*{userName}" class="in" />
+      <span th:errors="*{userName}"></span>
+      <br />
+      <br />
+      <label for="firstName"> Enter your crush-name:</label>
+      <input type="text" th:field="*{crushName}" class="in" />
+      <span th:errors="*{crushName}"></span>
+      <br />
+
+      <label for="check">I am agreeing that this is for fun</label>
+      <input
+        type="checkbox"
+        th:field="*{agreedToTermsAndCondition}"
+        class="in"
+      />
+      <span th:errors="*{agreedToTermsAndCondition}"></span>
+      <br />
+      <button type="submit">calculate</button>
+      <input type="reset" value="clear" />
+    </form>
+  </body>
+</html>

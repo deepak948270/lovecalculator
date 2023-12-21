@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+</head>
+<style>
+    body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        #btn{
+            color: white;
+            background-color: rgb(27, 50, 161);
+            font-size: larger;
+        }
+        #btn:hover{
+            background-color: green;
+        }
+       
+</style>
+<!-- adding css file to the navbar -->
+<link rel="stylesheet" th:href="@{/css/navstyle.css}"/>
+<body>
+    <!-- replaces host tag with the fragment tag -->
+    <div th:replace="~{myfragments :: navbarfragment}">
+        <h1>host tag</h1>
+    </div>
+    
+    <h1>this is home page!</h1>
+    <div>
+    <h1 th:text="${name}"></h1>
+    <h1 th:text="${roles}"></h1>
+    </div>
+
+    <a th:href="@{/userprofile}"><button id="btn">profile section </button></a>
+    
+</body>
+</html>

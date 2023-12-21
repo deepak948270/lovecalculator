@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>About Love Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #e44d26;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #666;
+        }
+    </style>
+
+    <!-- adding css file for navbar -->
+<link rel="stylesheet" th:href="@{/css/navstyle.css}"/>
+
+</head>
+<body>
+      <!-- replaces host tag with the fragment tag -->
+      <div th:replace="~{myfragments :: navbarfragment}">
+        <h1>host tag</h1>
+    </div>
+
+    <div class="container">
+        <h2>About Love Calculator</h2>
+        <p>Welcome to Love Calculator, a project that brings joy and excitement to people curious about their love compatibility!</p>
+
+        <h3>Owner</h3>
+        <p>The Love Calculator project is owned and managed by DeepakThapak and VivekThapak.</p>
+
+        <h3>Contact Information</h3>
+        <p>You can reach out to Deepak Thapak via email at deepaksharma948270@gmail.com</p>
+
+        <h3>Project Details</h3>
+        <p>This Love Calculator project is designed to provide users with a fun way to calculate their love compatibility based on various factors.</p>
+
+        <h3>Disclaimer</h3>
+        <p>Please note that the Love Calculator is meant for entertainment purposes only. Results may not be accurate, and the project owner is not responsible for any decisions made based on the results.</p>
+    </div>
+
+</body>
+</html>

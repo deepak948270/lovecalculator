@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>process email</title>
+<body>
+<div style="text-align: center;">
+    <h1 style="color: orange;">Mr:<span th:text="${session.user.userName}"></span></h1>
+    <br>
+    <h1 style="color: blue;">result has sucessfully sent to
+        <span th:text="${emailDTO.userEmail }" ></span></h1>
+</div>
+<br>
+<br>
+<h1>
+    <a href="lovecalci" style="color: green;"> again calculate!</a>
+</h1>
+</body>
+</html>

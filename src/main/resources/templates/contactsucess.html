@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact sucess</title>
+</head>
+<body>
+    <h1>hello Mr:<span th:text="${contactDto.name}"></span> </h1>
+    <h1>your query send sucessfully</h1>
+    <br/>
+    <div>
+        <a th:href="@{/}"><h1>go to welcome page</h1></a>
+    </div>
+</body>
+</html>

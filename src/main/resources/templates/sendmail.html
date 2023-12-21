@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>send email</title>
+</head>
+<body>
+
+<h1 style="text-align: center;color: red;">Send Result through Email</h1>
+
+<div class="outline" style="text-align: center;">
+    <h1 style="color: blue;">Hii MR: <span th:text="${session.user.userName}"></span> </h1>
+
+
+    <form action="processemail" method="GET" th:object="${emailDTO}">
+        <label for="email">Enter Your Valid Email</label>
+        <input id="email" th:field="*{userEmail}"/>
+
+        <input type="submit" value="send" />
+    </form>
+</div>
+
+</body>
+</html>

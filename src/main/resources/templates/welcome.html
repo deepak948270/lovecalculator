@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+</head>
+<style>
+
+body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+    #thapak{
+        color: blue;
+    }
+
+        
+        p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+
+        .feature {
+            flex: 0 1 30%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        #btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: rgba(144, 234, 92, 0.8); /* Transparent white background */
+            color: #333; 
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #btn:hover {
+            background-color: rgb(8, 8, 182); 
+            color: white;
+        }
+
+        #btn:active{
+            background-color: green;
+            color: white;
+        }
+
+        #lc{
+            color: red;
+        }
+        #lc:hover{
+            color: blue;
+        }
+        #lc:active{
+            color: rgb(82, 226, 135);
+        }
+       
+</style>
+
+<!-- adding css file for navbar -->
+<link rel="stylesheet" th:href="@{/css/navstyle.css}"/>
+
+<body>
+
+    <nav>
+        <a th:href="@{#}">welcome</a>
+        <a th:href="@{/home}">home</a>
+        <a th:href="@{/lovecalci}">calculate love</a>
+        <a th:href="@{/signup}">signup </a>
+        <a  th:href="@{/login}">login</a>
+        <a th:href="@{/logout}">logout</a>
+        <a th:href="@{/about}">about</a>
+        <a th:href="@{/contact}">Contact</a>
+
+        
+    </nav>
+    
+<div style="text-align: center;">
+    <h1 id="lc">Welcome to the Love Calculator</h1>
+    <p>Have you ever wondered about the compatibility between you and your partner? Our Love Calculator is here to help you discover the magic and potential of your relationship.</p>
+    <p>Simply enter your name and your partner's name, and let the Love Calculator analyze the compatibility based on a secret algorithm that considers the letters in your names.</p>
+
+    <div class="feature-list">
+        <div class="feature">
+            <h3>Accurate Results</h3>
+            <p>Our secret algorithm provides accurate compatibility results based on the combination of letters in your names.</p>
+        </div>
+        <div class="feature">
+            <h3>Fun and Easy</h3>
+            <p>Using the Love Calculator is fun and easy. It only takes a moment to get personalized results for you and your partner.</p>
+        </div>
+        <div class="feature">
+            <h3>Privacy Assured</h3>
+            <p>Your names are kept confidential, and we do not store any personal information. Your privacy is our priority.</p>
+        </div>
+    </div>
+
+    <p>Ready to see the sparks fly? Click the button below to start your love calculation journey!</p>
+    <a th:href="@{/lovecalci}" id="btn"> start calculate</a>
+</div>
+   
+</body>
+</html>

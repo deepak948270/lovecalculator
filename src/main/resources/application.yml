@@ -1,0 +1,38 @@
+#postgresql configuration
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/calci?user=postgres&password=948270
+
+#hibernate configuration
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+#oauth2 configuration for github
+
+  security:
+    oauth2:
+      client:
+       registration:
+        github:
+         client-id: 53fc0514efa796ba70b3
+         client-secret: 508be871f4728f61781e6ea16900eba32b18ce37
+        google:
+         client-id: 564558054555-9sqiiadk2o74apu0qdkal69nk9uvqliu.apps.googleusercontent.com
+         client-secret: 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
+
+# configuration for mail sender api
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: deepaksharma948270@gmail.com
+    password: cavujxnxcgygkdyy
+    properties:
+     mail:
+      smtp:
+       auth: true
+       starttls:
+        enable: true
+    

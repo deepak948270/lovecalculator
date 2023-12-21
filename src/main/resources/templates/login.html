@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style th:inline="text">
+        /* Inline CSS for simplicity, consider moving this to a separate stylesheet */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #282c34; /* Dark background color */
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            width: 300px;
+            text-align: center;
+            animation: fadeIn 0.5s;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #34495e;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 12px;
+            font-size: 14px;
+            border: 1px solid #bdc3c7;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+
+         <div th:if="${param.signupSuccess}">
+            <h2 style="color: rgb(9, 117, 69);">Singnup Sucessfull! please Login!</h2>
+          </div>
+
+          <div th:if="${param.passwordchanged}">
+            <h2 style="color: rgb(9, 117, 69);">Passwrod changed sucessfully! please Login!</h2>
+          </div>
+
+
+          <div th:if="${param.accountdelected}">
+            <h2 style="color: rgb(17, 133, 19);">Account delected sucessfully !!</h2>
+          </div>
+
+          <div th:if="${param.error}">
+            <h2 style="color: red;">Invalid username or password. Please try again.</h2>
+          </div>
+      
+          <div th:if="${param.logout}">
+            <h2 style="color: rgb(0, 0, 255);">you are sucessfully logout from this application.</h2>
+          </div>
+        <h2>Login</h2>
+        <form th:action="@{/processlogin}" method="post">
+            <div class="form-group">
+                <label for="username">EmailId:</label>
+                <input type="email" id="username" name="useremail"  placeholder="enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="userpassword" placeholder="enter your password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <br/>
+
+        <form th:action="@{/oauth2/authorization/github}" method="post">
+            <button type="submit" >Login with github</button>
+        </form>
+        <br/>
+        <form th:action="@{/oauth2/authorization/google}" method="post">
+            <button type="submit" >Login with google</button>
+        </form>
+    
+        <h2> <a th:href="@{/signup}">signup</a> </h2>
+    </div>
+</body>
+</html>
