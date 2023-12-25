@@ -8,6 +8,7 @@ public class LovecalculatorApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LovecalculatorApplication.class, args);
+		
 	}
 
 }

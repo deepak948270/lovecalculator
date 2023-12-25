@@ -3,11 +3,18 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/calci?user=postgres&password=948270
 
+
 #hibernate configuration
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+#enable spring-boot logging colour
+  output:
+    ansi:
+      enabled: always
+  
 
 
 #oauth2 configuration for github
@@ -36,3 +43,5 @@ spring:
        starttls:
         enable: true
     
+
+   

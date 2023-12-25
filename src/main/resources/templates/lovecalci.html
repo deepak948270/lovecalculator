@@ -12,7 +12,7 @@
   </head>
   <style>
     body {
-      background-color: rgb(137, 163, 164);
+      background-color: rgb(182, 199, 200);
     }
     span {
       color: red;
@@ -22,14 +22,34 @@
 
     form {
       text-align: center;
+      font-size: 30px;
+      color: darkblue;
+    }
+
+    form:hover {
+      color: rgb(71, 5, 51);
     }
 
     .in {
       width: 300px;
+      background-color: cadetblue;
     }
 
-    #love {
-      color: red;
+    #submit {
+      color: green;
+    }
+
+    #submit:hover {
+      background-color: blue;
+      color: white;
+    }
+
+    #clear {
+      color: green;
+    }
+    #clear:hover {
+      background-color: blue;
+      color: white;
     }
   </style>
 
@@ -42,9 +62,7 @@
       <h1>host tag</h1>
     </div>
 
-    <h1 style="color: purple; text-align: center">
-      Love<span id="love">&#10084;</span> Calculator
-    </h1>
+    <h1 style="color: purple; text-align: center">Love &#10084;Calculator</h1>
     <hr />
 
     <form th:object="${loveDto}" th:action="@{/processlovecalci}" method="get">
@@ -66,8 +84,8 @@
       />
       <span th:errors="*{agreedToTermsAndCondition}"></span>
       <br />
-      <button type="submit">calculate</button>
-      <input type="reset" value="clear" />
+      <button id="submit" type="submit">calculate</button>
+      <input id="clear" type="reset" value="clear" />
     </form>
   </body>
 </html>

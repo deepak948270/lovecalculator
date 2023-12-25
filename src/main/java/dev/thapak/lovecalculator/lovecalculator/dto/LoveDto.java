@@ -15,7 +15,7 @@ public class LoveDto {
     @NotBlank(message = "*your name is mendatory")
 	private String userName;
 
-	@NotBlank(message = "*cruch name is mendatory")
+	@NotBlank(message = "*crush name is mendatory")
 	private String crushName;
 
 	@AssertTrue(message = " * You have to agree to use our app")
